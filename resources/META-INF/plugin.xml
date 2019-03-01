@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.vladsch.plugins.consoleFileCaddy</id>
+    <name>Console File Caddy</name>
+    <vendor email="vladimir.schneider@gmail.com" url="http://www.vladsch.com">Vladimir Schneider</vendor>
+    <description><![CDATA[
+        <div xmlns="http://www.w3.org/1999/html">
+            <p>Adds a console UrlFilter which recognized absolute file paths with or without the <code>file://</code>
+                protocol prefix and with optional Line/Column Position suffix.</p>
+            <p>Paths in the form: <code>/...../some-file.ext:xxx</code> for OS X/Unix systems and
+                <code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> for Windows systems, where either <code>/</code>
+                and <code>\</code> will be recognized.</p>
+            <p>The plugin is liberal in recognizing the suffix with <code>xxx</code> being line number and
+                <code>yyy</code> column on the line and will accept <code>#Lxxx</code>, <code>:xxx:yyy</code>, <code>(xxx:yyy)</code>, <code>[xxx-yyy]</code> and their
+                permutations.</p>
+            <p>Useful for any console application which outputs absolute file path and line information as part
+                of its operation. For example Scala sbt will output warnings with file/line information which
+                this plugin will convert to navigable link right to the file/line.</p>
+            <p>It can also be used for parameterized tests with the <code>assertXXX(message, expected, actual)</code>
+                assertions where the message contains the file/line of the source of the parameters for the
+                test. See <a href="../../README.md">README</a></p>
+        </div>
+        ]]>
+    </description>
+
+    <version>1.0.0</version>
+    <idea-version since-build="162.*"/>
+    <depends>com.intellij.modules.lang</depends>
+
+    <change-notes><![CDATA[
+        <div xmlns="http://www.w3.org/1999/html">
+            <h3>Version 1.0.0 - Initial Release</h3>
+            <ul>
+                <li>Add: Custom URL filter for file paths and line/column information to eliminate the need to
+                    wait for <a href="https://youtrack.jetbrains.com/issue/IDEA-207453" title="Add Conversion of ref anchor to UrlFilter for file line navigation">YouTrack: IDEA-207453</a> and have flexibility in what is recognized as a file link.
+                </li>
+            </ul>
+        </div>
+        ]]></change-notes>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.UrlFilter$UrlFilterProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

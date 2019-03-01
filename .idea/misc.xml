@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+	<component name="MarkdownNavigatorHistory">
+		<PasteImageHistory filename="" directory="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/support/images" onPasteImageTargetRef="3" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteReferenceElement="0" cornerRadius="10" borderColor="-4342339" transparentColor="-1" borderWidth="1" trimTop="2" trimBottom="2" trimLeft="2" trimRight="1" transparent="false" roundCorners="true" showPreview="true" bordered="true" scaled="true" cropped="true" hideInapplicableOperations="false" scale="40" scalingInterpolation="1" transparentTolerance="20" saveAsDefaultOnOK="true" linkFormat="2">
+			<directories>
+				<option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/support/images"/>
+			</directories>
+			<filenames/>
+		</PasteImageHistory>
+		<CopyImageHistory filename="" directory="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/support/images" onPasteImageTargetRef="2" onPasteLinkText="0" onPasteImageElement="1" onPasteLinkElement="1" onPasteReferenceElement="1" cornerRadius="8" borderColor="-4934476" transparentColor="-351382" borderWidth="1" trimTop="0" trimBottom="0" trimLeft="0" trimRight="0" transparent="false" roundCorners="false" showPreview="true" bordered="false" scaled="false" cropped="false" hideInapplicableOperations="false" scale="50" scalingInterpolation="1" transparentTolerance="0" saveAsDefaultOnOK="true" linkFormat="2">
+			<directories>
+				<option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/support/images"/>
+			</directories>
+			<filenames/>
+		</CopyImageHistory>
+		<PasteLinkHistory onPasteImageTargetRef="2" onPasteTargetRef="2" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteWikiElement="1" onPasteReferenceElement="2" hideInapplicableOperations="false" saveAsDefaultOnOK="false" linkFormat="2"/>
+	</component>
+	<component name="NodePackageJsonFileManager">
+		<packageJsonPaths/>
+	</component>
+	<component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="IDEA Plugin jdk MN" project-jdk-type="IDEA JDK">
+		<output url="file://$PROJECT_DIR$/out"/>
+	</component>
+</project>

@@ -1,0 +1,15 @@
+<p>Adds a console UrlFilter which recognized absolute file paths with or without the <code>file://</code>
+protocol prefix and with optional Line/Column Position suffix.</p>
+<p>Paths in the form: <code>/...../some-file.ext:xxx</code> for OS X/Unix systems and
+<code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> for Windows systems, where either <code>/</code>
+and <code>\</code> will be recognized.</p>
+<p>The plugin is liberal in recognizing the suffix with <code>xxx</code> being line number and
+<code>yyy</code> column on the line and will accept <code>#Lxxx</code>, <code>:xxx:yyy</code>, <code>(xxx:yyy)</code>, <code>[xxx-yyy]</code> and their
+permutations.</p>
+<p>Useful for any console application which outputs absolute file path and line information as part
+of its operation. For example Scala sbt will output warnings with file/line information which
+this plugin will convert to navigable link right to the file/line.</p>
+<p>It can also be used for parameterized tests with the <code>assertXXX(message, expected, actual)</code>
+assertions where the message contains the file/line of the source of the parameters for the
+test. See <a href="../../README.md">README</a></p>
+
