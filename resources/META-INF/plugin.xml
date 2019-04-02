@@ -2,6 +2,7 @@
     <id>com.vladsch.plugins.consoleFileCaddy</id>
     <name>Console File Caddy</name>
     <vendor email="vladimir.schneider@gmail.com" url="http://www.vladsch.com">Vladimir Schneider</vendor>
+    <category>Custom Languages</category>
     <description><![CDATA[
         <div xmlns="http://www.w3.org/1999/html">
             <p>Adds a console UrlFilter which recognized absolute file paths with or without the <code>file://</code>
