@@ -92,7 +92,7 @@ public class ParamRowGenerator {
         StackTraceElement callerInfo = Thread.currentThread().getStackTrace()[2 + callerOffset];
 
         int index = this.index++;
-        String file = locationPrefix == null ? "fqn://" + callerInfo.getClassName() : locationPrefix + callerInfo.getFileName();
+        String file = locationPrefix == null ? "fqn://" + removeSuffix(callerInfo.getClassName()) : locationPrefix + callerInfo.getFileName();
         int line = callerInfo.getLineNumber() + lineProvider.getLineOffset(row);
         int column = columnProvider.getColumn(row);
 
@@ -102,5 +102,12 @@ public class ParamRowGenerator {
         rows.add(newRow);
 
         return this;
+    }
+
+    @NotNull
+    public static String removeSuffix(@NotNull String className) {
+        int pos = className.indexOf('$');
+        if (pos > 0) return className.substring(0, pos);
+        else return className;
     }
 }
