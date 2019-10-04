@@ -9,9 +9,8 @@
 
 ### Version 1.0.0 - Initial Release
 
-* Add: Custom URL filter for file paths and line/column information to eliminate the need to
-  wait for [YouTrack: IDEA-207453] and have flexibility in what is recognized as a file link.
+* Add: handling of `fqn://` prefix and fqn to file resolution
+* Fix: handling of prefix to remove before testing for file existence.
+* Add: Custom URL filter for file paths with line/column information to have flexibility in what
+  is recognized as a file link in IDE terminal console output.
 
-
-
-[YouTrack: IDEA-207453]: https://youtrack.jetbrains.com/issue/IDEA-207453 "Add Conversion of ref anchor to UrlFilter for file line navigation"

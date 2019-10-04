@@ -1,18 +1,21 @@
-Adds a console UrlFilter which recognized absolute file paths with or without the `file://`
-protocol prefix and with optional Line/Column Position suffix.
+Converts absolute file paths with optional line/column information in the console output to
+navigable links to files.
 
-Paths in the form: `/...../some-file.ext:xxx` for OS X/Unix systems and
-`x:\....\some-file.ext:xxx` or `x:/..../some-file.ext:xxx` for Windows systems, where either `/`
-and `\` will be recognized.
+Paths in the form: `/...../some-file.ext:xxx` on OS X/Unix systems and
+`x:\....\some-file.ext:xxx` or `x:/..../some-file.ext:xxx` on Windows systems will be converted.
 
-The plugin is liberal in recognizing the suffix with `xxx` being line number and
-`yyy` column on the line and will accept `#Lxxx`, `:xxx:yyy`, `(xxx:yyy)`, `[xxx-yyy]` and their
-permutations.
+The plugin is liberal in recognizing the suffix with `yyy` being line number and `xxx` column
+and will accept `#Lyyy`, `:yyy:xxx`, `(yyy:xxx)`, `[yyy-xxx]` and their permutations.
 
 Useful for any console application which outputs absolute file path and line information as part
 of its operation. For example Scala sbt will output warnings with file/line information which
 this plugin will convert to navigable link right to the file/line.
 
-It can also be used for parameterized tests with the `assertXXX(message, expected, actual)`
-assertions where the message contains the file/line of the source of the parameters for the
-test. See [README](../../README.md) 
+It will also recognize `fqn://` protocol followed by a language specific fully qualified class
+name and optional line and column information. This link only requires a fully qualified class
+name which is independent of the physical location of the project.
+
+This makes it useful for generating links from tests including parameterized tests with
+`assertXXX(message, expected, actual)` assertions. If message contains the file/line/column of
+the source for the test parameter data then a failed test will have a navigable link. See
+[README](../../README.md)

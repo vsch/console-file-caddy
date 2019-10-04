@@ -1,15 +1,17 @@
-<p>Adds a console UrlFilter which recognized absolute file paths with or without the <code>file://</code>
-protocol prefix and with optional Line/Column Position suffix.</p>
-<p>Paths in the form: <code>/...../some-file.ext:xxx</code> for OS X/Unix systems and
-<code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> for Windows systems, where either <code>/</code>
-and <code>\</code> will be recognized.</p>
-<p>The plugin is liberal in recognizing the suffix with <code>xxx</code> being line number and
-<code>yyy</code> column on the line and will accept <code>#Lxxx</code>, <code>:xxx:yyy</code>, <code>(xxx:yyy)</code>, <code>[xxx-yyy]</code> and their
-permutations.</p>
+<p>Converts absolute file paths with optional line/column information in the console output to
+navigable links to files.</p>
+<p>Paths in the form: <code>/...../some-file.ext:xxx</code> on OS X/Unix systems and
+<code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> on Windows systems will be converted.</p>
+<p>The plugin is liberal in recognizing the suffix with <code>yyy</code> being line number and <code>xxx</code> column
+and will accept <code>#Lyyy</code>, <code>:yyy:xxx</code>, <code>(yyy:xxx)</code>, <code>[yyy-xxx]</code> and their permutations.</p>
 <p>Useful for any console application which outputs absolute file path and line information as part
 of its operation. For example Scala sbt will output warnings with file/line information which
 this plugin will convert to navigable link right to the file/line.</p>
-<p>It can also be used for parameterized tests with the <code>assertXXX(message, expected, actual)</code>
-assertions where the message contains the file/line of the source of the parameters for the
-test. See <a href="../../README.md">README</a></p>
+<p>It will also recognize <code>fqn://</code> protocol followed by a language specific fully qualified class
+name and optional line and column information. This link only requires a fully qualified class
+name which is independent of the physical location of the project.</p>
+<p>This makes it useful for generating links from tests including parameterized tests with
+<code>assertXXX(message, expected, actual)</code> assertions. If message contains the file/line/column of
+the source for the test parameter data then a failed test will have a navigable link. See
+<a href="../../README.md">README</a></p>
 

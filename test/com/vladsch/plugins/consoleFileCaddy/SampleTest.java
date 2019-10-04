@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
@@ -23,12 +22,11 @@ public class SampleTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<Object[]> data() {
-        ArrayList<Object[]> rows = new ParamRowGenerator("/Users/vlad/src/projects/console-file-caddy/test/com/vladsch/plugins/consoleFileCaddy")
+        return new ParamRowGenerator()
                 .row(new Object[] { 1, 1 })
                 .row(new Object[] { 2, 3 })
                 .row(new Object[] { 3, 3 })
                 .rows;
-        return rows;
     }
 
     @Test

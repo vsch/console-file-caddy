@@ -31,16 +31,17 @@
         <div xmlns="http://www.w3.org/1999/html">
             <h3>Version 1.0.0 - Initial Release</h3>
             <ul>
-                <li>Add: Custom URL filter for file paths and line/column information to eliminate the need to
-                    wait for <a href="https://youtrack.jetbrains.com/issue/IDEA-207453" title="Add Conversion of ref anchor to UrlFilter for file line navigation">YouTrack: IDEA-207453</a> and have flexibility in what is recognized as a file link.
-                </li>
+                <li>Add: handling of <code>fqn://</code> prefix and fqn to file resolution</li>
+                <li>Fix: handling of prefix to remove before testing for file existence.</li>
+                <li>Add: Custom URL filter for file paths with line/column information to have flexibility in what
+                    is recognized as a file link in IDE terminal console output.</li>
             </ul>
         </div>
         ]]></change-notes>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.UrlFilter$UrlFilterProvider"/>
+        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.UrlFilter$UrlFilterProvider" order="first"/>
     </extensions>
 
     <actions>
