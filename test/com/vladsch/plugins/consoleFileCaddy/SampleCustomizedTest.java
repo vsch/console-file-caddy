@@ -49,10 +49,8 @@ public class SampleCustomizedTest {
     @Parameterized.Parameters(name = "{1}")
     public static Collection<Object[]> data() {
         return new CustomParamRow()
-                .row(null, 1, 0)
                 .row("Pass", 1, 1)
                 .row("Fail", 2, 3)
-                .row("Fail", 3, 2)
                 .row("Pass", 4, 4)
                 .rows;
     }

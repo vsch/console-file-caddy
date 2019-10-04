@@ -49,16 +49,16 @@ import static java.util.Locale.US;
 public class UrlFilter implements Filter, DumbAware {
     private static final Logger LOG = getInstance("com.vladsch.plugins.consoleFileCaddy");
 
-    final protected static String TEST_PROTOCOL_PREFIX = "fqn://";
+    final protected static String FQN_PROTOCOL_PREFIX = "fqn://";
     final protected static String FILE_PROTOCOL_PREFIX = "file:///";
     final protected static String ANCHOR_SUFFIX = "((?:[#:(\\[]\\s?L?(\\d+)[^/\\\\\\dL]?(?:L?(\\d+)?[)\\]]?))?)(?:$|[ \\t>)]|:])";
-    final protected static String TEST_CLASS_FQN = "(?:" + TEST_PROTOCOL_PREFIX + "[^ \\t]+?)";
+    final protected static String CLASS_FQN = "(?:" + FQN_PROTOCOL_PREFIX + "[^ \\t]+?)";
     public static final Pattern PATTERN_UNIX = Pattern.compile("(?:^|[ \\t:><|/])" +
-            "(" + TEST_CLASS_FQN
+            "(" + CLASS_FQN
             + "|(?:file://|/(?:[^ \\t:><|/]+/[^ \\t:><|/])+)[^ \\t]+?)"
             + ANCHOR_SUFFIX, Pattern.MULTILINE);
     public static final Pattern PATTERN_WINDOWS = Pattern.compile("(?:^|[ \\t:><|/\\\\])" +
-            "(" + TEST_CLASS_FQN
+            "(" + CLASS_FQN
             + "|(?:file://|(?:[a-zA-Z]:[/\\\\])(?:[^ \\t:><|/\\\\]+[/\\\\][^ \\t:><|/\\\\])+)[^ \\t]+?" +
             ")"
             + ANCHOR_SUFFIX, Pattern.MULTILINE);
@@ -95,10 +95,10 @@ public class UrlFilter implements Filter, DumbAware {
             LOG.debug("File path: " + filePath);
 
             HyperlinkInfo hyperlinkInfo = null;
-            if (filePath.startsWith(TEST_PROTOCOL_PREFIX)) {
+            if (filePath.startsWith(FQN_PROTOCOL_PREFIX)) {
                 if (myProject != null) {
                     // test file link
-                    fixedFilePath = filePath.substring(TEST_PROTOCOL_PREFIX.length());
+                    fixedFilePath = filePath.substring(FQN_PROTOCOL_PREFIX.length());
                     LOG.debug("Test file: " + fixedFilePath);
                     hyperlinkInfo = buildFileHyperlinkInfo(true, fixedFilePath, m.group(3), m.group(4));
                 }
