@@ -2,7 +2,6 @@
     <id>com.vladsch.plugins.consoleFileCaddy</id>
     <name>Console File Caddy</name>
     <vendor email="vladimir.schneider@gmail.com" url="http://www.vladsch.com">Vladimir Schneider</vendor>
-    <category>Custom Languages</category>
     <description><![CDATA[
         <div xmlns="http://www.w3.org/1999/html">
             <p>A plugin to convert console output text to links for absolute paths, <code>file://</code> or <code>fqn://</code> URI
