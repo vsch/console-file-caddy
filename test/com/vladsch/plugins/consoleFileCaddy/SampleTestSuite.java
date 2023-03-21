@@ -21,6 +21,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         SampleTest.class,
         SampleCustomizedTest.class,
+        SampleDiffTest.class,
 })
 public class SampleTestSuite {
 }

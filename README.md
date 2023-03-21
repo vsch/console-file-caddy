@@ -6,17 +6,25 @@ column location in the editor.
 
 * Absolute paths in the form: `/...../some-file.ext:xxx` on OS X/Unix systems and
   `x:\....\some-file.ext:xxx` or `x:/..../some-file.ext:xxx` on Windows systems will be
-  converted to links.
+  converted to links, where `xxx` is line/column information.
+
+* The plugin is liberal in recognizing the suffix with `yyy` being line number and `xxx` column
+  and will accept `#Lyyy`, `:yyy:xxx`, `(yyy:xxx)`, `[yyy-xxx]` and their permutations.
 
 * `fqn://` protocol followed by a language specific fully qualified class name and optional line
   and column information. This link only requires a fully qualified class name which is
   independent of the physical location of the project.
 
-* The plugin is liberal in recognizing the suffix with `yyy` being line number and `xxx` column
-  and will accept `#Lyyy`, `:yyy:xxx`, `(yyy:xxx)`, `[yyy-xxx]` and their permutations.
+* `diff:///path1#xxx?/path2#yyy&` protocol followed by two absolute paths, with line information
+  appended to the path. If the paths are both files then a file diff viewer will be opened, if
+  not possible then both files will be opened in editors. If both file paths are directories,
+  then directory diff viewer will be opened.
 
 Great for navigating to file references in console application which outputs absolute file path
 with line information.
+
+`diff://` links are good in utilities or tests for which the IDE does not know how to interpret
+its output to create a difference view link.
 
 `fqn://` links are great for generating links in test output, including parameterized tests,
 with `assertXXX(message, expected, actual)` assertions. Add an `fqn://` reference for the
