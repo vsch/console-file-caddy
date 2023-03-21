@@ -31,9 +31,7 @@ import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.execution.filters.LazyFileHyperlinkInfo;
 import com.intellij.execution.filters.LineNumbersMapping;
 import com.intellij.ide.actions.QualifiedNameProvider;
-import com.intellij.ide.diff.DiffElement;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.diff.DirDiffManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
@@ -64,7 +62,7 @@ import static com.intellij.openapi.diagnostic.Logger.getInstance;
 import static java.lang.System.getProperty;
 import static java.util.Locale.US;
 
-public class UrlFilter implements Filter, DumbAware {
+public class ConsoleFileCaddyFilter implements Filter, DumbAware {
     private static final Logger LOG = getInstance("com.vladsch.plugins.consoleFileCaddy");
 
     final protected static String FILE_PROTOCOL_PREFIX = "file:///";
@@ -76,33 +74,49 @@ public class UrlFilter implements Filter, DumbAware {
     final protected static String ANCHOR_SUFFIX_DIFF_2 = "(?:(?:[#:(\\[]\\s?L?(\\d+)[^/\\\\\\dL]?(?:L?(\\d+)?[)\\]]?))?)(?:[ \\t]*?\\&)";
     final protected static String CLASS_FQN = "(?:fqn://[^ \\t]+?)";
     final protected static String CLASS_DIFF = "(?:diff://([^ \\t]+?))";
-    
-    public static final Pattern PATTERN_UNIX = Pattern.compile("(?:^|[ \\t:><|/])"
+    final protected static String CLASS_DIFF_HIJACK = "(?:diff://((?:/?\\[)?[^ \\t]+?\\]?))";
+    final protected static String DIFF_SECOND = "[ \\t]*?\\?[ \\t]*?([^ \\t]+?)";
+    final protected static String DIFF_SECOND_HIJACK = "[ \\t]*?\\?[ \\t]*?((?:/?\\[)?[^ \\t]+?\\]?)";
+
+    final protected static Pattern PATTERN_UNIX = Pattern.compile("(?:^|[ \\t:><|/])"
                     + "((?:(" + CLASS_FQN + "|(?:file://|/(?:[^ \\t:><|/]+/[^ \\t:><|/])+)[^ \\t]+?)" + ANCHOR_SUFFIX + ")"
-                    + "|(?:" + CLASS_DIFF + ANCHOR_SUFFIX_DIFF_1 + "[ \\t]*?\\?[ \\t]*?([^ \\t]+?)" + ANCHOR_SUFFIX_DIFF_2 + "))"
+                    + "|(?:" + CLASS_DIFF + ANCHOR_SUFFIX_DIFF_1 + DIFF_SECOND + ANCHOR_SUFFIX_DIFF_2 + "))"
             , Pattern.MULTILINE);
-    
-    public static final Pattern PATTERN_WINDOWS = Pattern.compile("(?:^|[ \\t:><|/\\\\])"
+
+    final protected static Pattern PATTERN_UNIX_HIJACK = Pattern.compile("(?:^|[ \\t:><|/])"
+                    + "((?:(" + CLASS_FQN + "|(?:file://|/(?:[^ \\t:><|/]+/[^ \\t:><|/])+)[^ \\t]+?)" + ANCHOR_SUFFIX + ")"
+                    + "|(?:" + CLASS_DIFF_HIJACK + ANCHOR_SUFFIX_DIFF_1 + DIFF_SECOND_HIJACK + ANCHOR_SUFFIX_DIFF_2 + "))"
+            , Pattern.MULTILINE);
+
+    final protected static Pattern PATTERN_WINDOWS = Pattern.compile("(?:^|[ \\t:><|/\\\\])"
                     + "((?:(" + CLASS_FQN + "|(?:file://|(?:[a-zA-Z]:[/\\\\])(?:[^ \\t:><|/\\\\]+[/\\\\][^ \\t:><|/\\\\])+)[^ \\t]+?)" + ANCHOR_SUFFIX + ")"
-                    + "|(?:" + CLASS_DIFF + ANCHOR_SUFFIX_DIFF_1 + "[ \\t]*?\\?[ \\t]*?([^ \\t]+?)" + ANCHOR_SUFFIX_DIFF_2 + "))"
+                    + "|(?:" + CLASS_DIFF + ANCHOR_SUFFIX_DIFF_1 + DIFF_SECOND + ANCHOR_SUFFIX_DIFF_2 + "))"
             , Pattern.MULTILINE);
+
+    final protected static Pattern PATTERN_WINDOWS_HIJACK = Pattern.compile("(?:^|[ \\t:><|/\\\\])"
+                    + "((?:(" + CLASS_FQN + "|(?:file://|(?:[a-zA-Z]:[/\\\\])(?:[^ \\t:><|/\\\\]+[/\\\\][^ \\t:><|/\\\\])+)[^ \\t]+?)" + ANCHOR_SUFFIX + ")"
+                    + "|(?:" + CLASS_DIFF_HIJACK + ANCHOR_SUFFIX_DIFF_1 + DIFF_SECOND_HIJACK + ANCHOR_SUFFIX_DIFF_2 + "))"
+            , Pattern.MULTILINE);
+
+    final protected static Pattern USE_PATTERN_UNIX = PATTERN_UNIX_HIJACK;
+    final protected static Pattern USE_PATTERN_WINDOWS = PATTERN_WINDOWS_HIJACK;
 
     private final Project myProject;
     //    private final GlobalSearchScope myScope;
     private final Pattern PATTERN;
 
-    public UrlFilter() {
+    public ConsoleFileCaddyFilter() {
         this(null, null);
     }
 
-    public UrlFilter(Project project, GlobalSearchScope scope) {
+    public ConsoleFileCaddyFilter(Project project, GlobalSearchScope scope) {
         myProject = project;
 //        myScope = scope;
 
         if (getProperty("os.name").toLowerCase(US).startsWith("windows")) {
-            PATTERN = PATTERN_WINDOWS;
+            PATTERN = USE_PATTERN_WINDOWS;
         } else {
-            PATTERN = PATTERN_UNIX;
+            PATTERN = USE_PATTERN_UNIX;
         }
     }
 
@@ -120,6 +134,8 @@ public class UrlFilter implements Filter, DumbAware {
             boolean isDiffLink = false;
 
             HyperlinkInfo hyperlinkInfo = null;
+            int leadSlash = PATTERN == PATTERN_UNIX || PATTERN == PATTERN_UNIX_HIJACK ? 1 : 0;
+
             if (filePath.startsWith(FQN_PREFIX)) {
                 if (myProject != null) {
                     // test file link
@@ -132,13 +148,20 @@ public class UrlFilter implements Filter, DumbAware {
                     // test file link
                     fixedFilePath = filePath.substring(DIFF_PREFIX.length());
                     LOG.debug("Test file: " + fixedFilePath);
-                    if (m.group(5) != null && m.group(8) != null) {
-                        hyperlinkInfo = buildDiffHyperlinkInfo(m.group(5), m.group(6), m.group(7), m.group(8), m.group(9), m.group(10));
+                    String filePath1 = m.group(5);
+                    String filePath2 = m.group(8);
+
+                    if (PATTERN == PATTERN_UNIX_HIJACK || PATTERN == PATTERN_WINDOWS_HIJACK) {
+                        // strip out [ ] and add leading / if it does not have it
+                        filePath1 = getUnHijackedPath(filePath1, leadSlash != 0);
+                        filePath2 = getUnHijackedPath(filePath2, leadSlash != 0);
+                    }
+                    if (filePath1 != null && filePath2 != null) {
+                        hyperlinkInfo = buildDiffHyperlinkInfo(filePath1, m.group(6), m.group(7), filePath2, m.group(9), m.group(10));
                     }
                     isDiffLink = true;
                 }
             } else {
-                int leadSlash = PATTERN == PATTERN_UNIX ? 1 : 0;
                 if (filePath.startsWith(FILE_PROTOCOL_PREFIX)) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - leadSlash);
                 else if (filePath.startsWith(FILE_PROTOCOL_PREFIX.substring(0, FILE_PROTOCOL_PREFIX.length() - 1))) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - 1 - leadSlash);
                 else if (filePath.startsWith(FILE_PROTOCOL_PREFIX.substring(0, FILE_PROTOCOL_PREFIX.length() - 2))) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - 2 - leadSlash);
@@ -174,6 +197,16 @@ public class UrlFilter implements Filter, DumbAware {
         return items != null ? new Result(items)
                 : item != null ? new Result(item.getHighlightStartOffset(), item.getHighlightEndOffset(), item.getHyperlinkInfo())
                 : null;
+    }
+
+    @NotNull
+    private static String getUnHijackedPath(String filePath, boolean leadSlash) {
+        if (!filePath.isEmpty() && filePath.charAt(0) == '[') filePath = filePath.substring(1);
+        else if (filePath.length() > 1 && filePath.charAt(1) == '[') filePath = filePath.charAt(0) + filePath.substring(2);
+        // no need can put leading / before the [
+        //if (!filePath.isEmpty() && filePath.charAt(0) != (leadSlash ? '/' : '\\')) filePath = (leadSlash ? "/" : "\\") + filePath;
+        if (!filePath.isEmpty() && filePath.charAt(filePath.length() - 1) == ']') filePath = filePath.substring(0, filePath.length() - 1);
+        return filePath;
     }
 
     @Nullable
@@ -275,7 +308,7 @@ public class UrlFilter implements Filter, DumbAware {
         @NotNull
         @Override
         public Filter[] getDefaultFilters(@NotNull Project project, @NotNull GlobalSearchScope scope) {
-            return new Filter[] { new UrlFilter(project, scope) };
+            return new Filter[] { new ConsoleFileCaddyFilter(project, scope) };
         }
 
         @NotNull

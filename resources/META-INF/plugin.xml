@@ -32,7 +32,7 @@
         ]]>
     </description>
 
-    <version>1.1.0</version>
+    <version>1.1.2</version>
     <idea-version since-build="183.2153.8"/>
     <depends>com.intellij.modules.lang</depends>
 
@@ -51,7 +51,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.UrlFilter$UrlFilterProvider" order="first"/>
+        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.ConsoleFileCaddyFilter$UrlFilterProvider" order="first"/>
     </extensions>
 
     <actions>
