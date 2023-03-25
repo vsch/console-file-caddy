@@ -128,7 +128,7 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
         ResultItem item = null;
         List<ResultItem> items = null;
         while (m.find()) {
-            String filePath = m.group(2);
+            String filePath = m.group(1);
             String fixedFilePath = filePath;
             LOG.debug("File path: " + filePath);
             boolean isDiffLink = false;
@@ -139,6 +139,8 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
             if (filePath.startsWith(FQN_PREFIX)) {
                 if (myProject != null) {
                     // test file link
+                    filePath = m.group(2);
+                    fixedFilePath = filePath;
                     fixedFilePath = fixedFilePath.substring(FQN_PREFIX.length());
                     LOG.debug("Test file: " + fixedFilePath);
                     hyperlinkInfo = buildFileHyperlinkInfo(true, fixedFilePath, m.group(3), m.group(4));
@@ -162,6 +164,8 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
                     isDiffLink = true;
                 }
             } else {
+                filePath = m.group(2);
+                fixedFilePath = filePath;
                 if (filePath.startsWith(FILE_PROTOCOL_PREFIX)) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - leadSlash);
                 else if (filePath.startsWith(FILE_PROTOCOL_PREFIX.substring(0, FILE_PROTOCOL_PREFIX.length() - 1))) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - 1 - leadSlash);
                 else if (filePath.startsWith(FILE_PROTOCOL_PREFIX.substring(0, FILE_PROTOCOL_PREFIX.length() - 2))) fixedFilePath = filePath.substring(FILE_PROTOCOL_PREFIX.length() - 2 - leadSlash);
