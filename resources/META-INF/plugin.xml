@@ -4,13 +4,14 @@
     <vendor email="vladimir.schneider@gmail.com" url="http://www.vladsch.com">Vladimir Schneider</vendor>
     <description><![CDATA[
         <div xmlns="http://www.w3.org/1999/html">
-            <p>A plugin to convert console output text to links for absolute paths, <code>file://</code> or <code>fqn://</code> URI
-                with optional <code>#line:column</code> anchor refs to specify the line and column location in the editor.</p>
+            <p>A plugin to convert console output into navigable links for absolute paths, <code>file://</code>, <code>fqn://</code>
+                and <code>diff://</code> URI with optional <code>#line:column</code> anchor refs to specify the line and column
+                location in the editor.</p>
             <ul>
                 <li>
                     <p>Absolute paths in the form: <code>/...../some-file.ext:xxx</code> on OS X/Unix systems and
-                        <code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> on Windows systems will be
-                        converted to links.</p>
+                        <code>x:\....\some-file.ext:xxx</code> or <code>x:/..../some-file.ext:xxx</code> on Windows systems, will be
+                        converted into links.</p>
                 </li>
                 <li>
                     <p><code>fqn://</code> protocol followed by a language specific fully qualified class name and optional line
@@ -18,33 +19,64 @@
                         independent of the physical location of the project.</p>
                 </li>
                 <li>
-                    <p>The plugin is liberal in recognizing the suffix with <code>yyy</code> being line number and <code>xxx</code> column
-                        and will accept <code>#Lyyy</code>, <code>:yyy:xxx</code>, <code>(yyy:xxx)</code>, <code>[yyy-xxx]</code> and their permutations.</p>
+                    <p><code>diff://</code> protocol followed by two file paths as <code>/somePath/...../file1.ext:xxx ? /someOtherPath/file2.ext:xxx &amp;</code> to be opened in the IDE difference view with each file&rsquo;s caret
+                        to be located at the optional coordinates given by <code>xxx</code>, same as absolute paths. To prevent
+                        other console filters from hijacking the individual paths as links to single files, the file
+                        paths can be optionally wrapped in <code>[]</code> after the first <code>/</code>, as:
+                        <code>diff:///[somePath/...../file1.ext:xxx]?/[someOtherPath/file2.ext:xxx]&amp;</code>. Spaces around <code>?</code> or
+                        the terminating <code>&amp;</code> are optional.</p>
+                </li>
+                <li>
+                    <p>The plugin is liberal in recognizing the line/column suffix with <code>yyy</code> being line number and
+                        <code>xxx</code> column and will accept <code>#Lyyy</code>, <code>:yyy:xxx</code>, <code>(yyy:xxx)</code>, <code>[yyy-xxx]</code> and their
+                        permutations.</p>
                 </li>
             </ul>
             <p>Great for navigating to file references in console application which outputs absolute file path
                 with line information.</p>
-            <p><code>fqn://</code> links are great for generating links in test output, including parameterized tests, with
-                <code>assertXXX(message, expected, actual)</code> assertions. Add an <code>fqn://</code> reference for the
-                file/line/column of the source of the test parameter data and get a failed test with a navigable
-                link to the data. See <a href="https://github.com/vsch/console-file-caddy/blob/master/README.md">README</a></p>
+            <p><code>fqn://</code> links are great for generating links in test output, including parameterized tests,
+                with <code>assertXXX(message, expected, actual)</code> assertions. Adding an <code>fqn://</code> reference for the
+                file/line/column of the source of the test parameter data, allows to get a failed test with a
+                navigable link to the line of parameter data, which failed. See
+                <a href="https://github.com/vsch/console-file-caddy/blob/master/README.md">README</a></p>
+            <p><code>diff://</code> links allow creating output with integrated difference links similar to test console
+                output in IntelliJ for test failure. It allows creating these links in test frameworks not
+                recognized by the IDE or where the IDE does not have the facility to easily show difference view
+                based on test output.</p>
+
         </div>
         ]]>
     </description>
 
-    <version>1.1.2</version>
+    <version>1.1.4</version>
     <idea-version since-build="183.2153.8"/>
     <depends>com.intellij.modules.lang</depends>
 
     <change-notes><![CDATA[
         <div xmlns="http://www.w3.org/1999/html">
-            <h3>Version 1.0.0 - Initial Release</h3>
+            <h3>1.1.4 - Dev Build</h3>
+            <ul>
+                <li>Change: Plugin description to include <code>diff://</code> links.</li>
+                <li>Fix: broken <code>fqn://</code> and file link handling</li>
+            </ul>
+            <h3>1.1.2 - Dev Build</h3>
+            <ul>
+                <li>Add: Optional wrapper for <code>/path1#xxx</code> and <code>/path2#xxx</code> in <code>[]</code> after the first <code>/</code> , to make
+                    it into <code>/[path1#xxx]</code> and <code>/[path2#xxx]</code>, to hijack the paths and prevent other console
+                    filters (like CLion&rsquo;s cidr filter) from grabbing them as links to separate files instead of a
+                    single diff link.</li>
+            </ul>
+            <h3>1.1.0 - Enhancement Release</h3>
+            <ul>
+                <li>Add: <code>diff:///path1#xxx?/path2#yyy&amp;</code> link handling to launch diff viewer, where <code>xxx</code> and
+                    <code>yyy</code> are line number information, where to put the corresponding files&rsquo; cursors.</li>
+            </ul>
+            <h3>1.0.0 - Initial Release</h3>
             <ul>
                 <li>Add: handling of <code>fqn://</code> prefix and fqn to file resolution</li>
                 <li>Fix: handling of prefix to remove before testing for file existence.</li>
-                <li>Add: Custom URL filter for file paths with line/column information to have flexibility in what
-                    is recognized as a file link in IDE terminal console output.
-                </li>
+                <li>Add: Custom URL to filter file paths with line/column information and flexibility in what is
+                    recognized as a file link in IDE terminal console output.</li>
             </ul>
         </div>
         ]]></change-notes>

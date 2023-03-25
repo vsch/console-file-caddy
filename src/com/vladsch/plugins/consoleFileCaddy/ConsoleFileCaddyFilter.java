@@ -128,7 +128,7 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
         ResultItem item = null;
         List<ResultItem> items = null;
         while (m.find()) {
-            String filePath = m.group(1);
+            String filePath = m.group(2);
             String fixedFilePath = filePath;
             LOG.debug("File path: " + filePath);
             boolean isDiffLink = false;
@@ -139,7 +139,7 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
             if (filePath.startsWith(FQN_PREFIX)) {
                 if (myProject != null) {
                     // test file link
-                    fixedFilePath = filePath.substring(FQN_PREFIX.length());
+                    fixedFilePath = fixedFilePath.substring(FQN_PREFIX.length());
                     LOG.debug("Test file: " + fixedFilePath);
                     hyperlinkInfo = buildFileHyperlinkInfo(true, fixedFilePath, m.group(3), m.group(4));
                 }
