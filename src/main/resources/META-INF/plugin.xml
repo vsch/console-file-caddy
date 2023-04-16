@@ -83,7 +83,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <consoleFilterProvider implementation="com.vladsch.plugins.consoleFileCaddy.ConsoleFileCaddyFilter$UrlFilterProvider" order="first"/>
+        <consoleFilterProvider implementation="com.vladsch.plugins.consolefilecaddy.ConsoleFileCaddyFilter$UrlFilterProvider" order="first"/>
     </extensions>
 
     <actions>

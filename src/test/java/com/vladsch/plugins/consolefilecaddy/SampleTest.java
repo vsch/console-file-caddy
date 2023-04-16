@@ -1,4 +1,4 @@
-package com.vladsch.plugins.consoleFileCaddy;
+package com.vladsch.plugins.consolefilecaddy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

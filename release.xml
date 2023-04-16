@@ -12,6 +12,6 @@
                     <zipfileset dir="out/artifacts" prefix="sharedLibraryRegistry/lib" includes="*.jar"/>
                 </zip>
         -->
-        <copy file="./out/artifacts/console-file-caddy.jar" todir="./" overwrite="true" />
+        <copy file="./out/artifacts/console-file-caddy.jar" todir="./" overwrite="true"/>
     </target>
 </project>

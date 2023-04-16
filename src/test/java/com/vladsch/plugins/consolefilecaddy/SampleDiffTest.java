@@ -1,4 +1,4 @@
-package com.vladsch.plugins.consoleFileCaddy;
+package com.vladsch.plugins.consolefilecaddy;
 
 import org.junit.Test;
 
@@ -34,6 +34,7 @@ public class SampleDiffTest {
     public void testDiffDirSample2() {
         fail("diff:///Users/vlad/src/projects/console-file-caddy/test/java/com/vladsch/plugins/consoleFileCaddy?/Users/vlad/src/projects/console-file-caddy/src/main/java/com/vladsch/plugins/consoleFileCaddy/&");
     }
+
     @Test
     public void testDiffSample3() {
         fail("diff:///[Users/vlad/src/projects/console-file-caddy/test/java/com/vladsch/plugins/consoleFileCaddy/SampleTest.java:23:36]?/[Users/vlad/src/projects/console-file-caddy/test/java/com/vladsch/plugins/consoleFileCaddy/SampleCustomizedTest.java:49:56]&");

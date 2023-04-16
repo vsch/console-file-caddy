@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vladsch.plugins.consoleFileCaddy;
+package com.vladsch.plugins.consolefilecaddy;
 
 import com.intellij.diff.DiffContentFactory;
 import com.intellij.diff.DiffDialogHints;

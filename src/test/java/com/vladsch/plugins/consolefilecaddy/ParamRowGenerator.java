@@ -1,4 +1,4 @@
-package com.vladsch.plugins.consoleFileCaddy;
+package com.vladsch.plugins.consolefilecaddy;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

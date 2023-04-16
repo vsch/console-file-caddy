@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="console-file-caddy">
-    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
-    <root id="archive" name="console-file-caddy.jar">
-      <element id="module-output" name="console-file-caddy" />
-    </root>
-  </artifact>
-</component>
