@@ -36,13 +36,13 @@ test is an exercise in frustration. The IDE test console provides a convenient l
 source of the failed test but not the location of the parameterized data used for the test.
 
 Use something like
-[SampleCustomTest.java](test/com/vladsch/plugins/consoleFileCaddy/SampleCustomizedTest.java) in
+[SampleCustomTest.java](test/java/com/vladsch/plugins/consoleFileCaddy/SampleCustomizedTest.java) in
 parameterized tests to generate a link in the message for failed tests. The link will take you
 right to the data location, no long search or guesswork.
 
 A simpler one line version, without the hassles of computing column information will navigate to
 the start of line for the parameterized data definition
-[SampleTest.java](test/com/vladsch/plugins/consoleFileCaddy/SampleTest.java).
+[SampleTest.java](test/java/com/vladsch/plugins/consoleFileCaddy/SampleTest.java).
 
 Running these tests for this project in IntelliJ will result in a failed test output with a
 navigable link to the errant test parameter row:
