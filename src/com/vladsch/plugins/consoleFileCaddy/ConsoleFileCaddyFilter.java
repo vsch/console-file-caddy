@@ -299,7 +299,7 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
                     OpenFileDescriptor descriptor;
                     descriptor = super.getDescriptor(wantSecond);
                     if (descriptor == null) {
-                        Messages.showErrorDialog(myProject, "Cannot find diff file " + StringUtil.trimMiddle(wantSecond ? filePath2 : filePath1, 150), "Cannot Open File");
+                        Messages.showErrorDialog(myProject, "Cannot open file " + StringUtil.trimMiddle(wantSecond ? filePath2 : filePath1, 150) + " for diff view.\nIt either does not exist or is truncated", "Cannot Open File");
                     }
                     return descriptor;
                 }
@@ -407,7 +407,11 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
                 line = wantedLine;
             }
 
-            return new OpenFileDescriptor(myProject, file, line);
+            try {
+                return new OpenFileDescriptor(myProject, file, line);
+            } catch (IllegalArgumentException ignored) {
+                return null;
+            }
         }
 
         @Nullable
