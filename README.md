@@ -1,6 +1,12 @@
 ## Console File Caddy
 
-<iframe width="245px" height="48px" frameborder="none" src="https://plugins.jetbrains.com/embeddable/install/21513"></iframe>
+<a href="" id="getfrommarketplace">Get From Marketplace</a>
+
+<script src="https://plugins.jetbrains.com/assets/scripts/mp-widget.js"></script>
+<script>
+  // Please, replace #yourelement with a real element id on your webpage
+  MarketplaceWidget.setupMarketplaceWidget('install', 21513, "#getfrommarketplace");
+</script>
 
 A JetBrains IDE to convert console output into navigable links for absolute paths, `file://`,
 `fqn://` and `diff://` URIs, with optional `#line:column` references to specify the line and

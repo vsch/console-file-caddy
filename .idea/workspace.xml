@@ -4,54 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99c9eef4-606d-4220-96c1-1c3c383196de" name="Changes" comment="change source sets to src/test, as it was before">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test_All.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scopes/Plugin_Description.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.run/Run Plugin.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/consoleFileCaddy-1.1.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/vladsch/plugins/consolefilecaddy/SampleDiffTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kannotator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/Plugin_Description.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/Plugin_Description.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/Version.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/Version.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/SampleDiffTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/SampleTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/SampleTestSuite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.run/Run IDE with Plugin.run.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+    <list default="true" id="99c9eef4-606d-4220-96c1-1c3c383196de" name="Changes" comment="change source sets to src/test, add runPluginVerifier">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VERSION.md" beforeDir="false" afterPath="$PROJECT_DIR$/VERSION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/markdown/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/markdown/description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/markdown/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/assets/markdown/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.bak.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/console-file-caddy.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.bak.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/release.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.bak.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladsch/plugins/consolefilecaddy/ConsoleFileCaddyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vladsch/plugins/consolefilecaddy/ConsoleFileCaddyFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/META-INF/pluginIcon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon_dark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/META-INF/pluginIcon_dark.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vladsch/plugins/consolefilecaddy/ParamRowGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/vladsch/plugins/consolefilecaddy/ParamRowGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vladsch/plugins/consolefilecaddy/SampleCustomizedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/vladsch/plugins/consolefilecaddy/SampleCustomizedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vladsch/plugins/consolefilecaddy/SampleDiffTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vladsch/plugins/consolefilecaddy/SampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/vladsch/plugins/consolefilecaddy/SampleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vladsch/plugins/consolefilecaddy/SampleTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/vladsch/plugins/consolefilecaddy/SampleTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update-plugin.sh" beforeDir="false" afterPath="$PROJECT_DIR$/update-plugin.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update-sandboxes.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +78,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -145,19 +106,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.vladsch.markdown.navigator.settings.rendering-profiles&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -234,6 +195,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681666411675</updated>
     </task>
+    <task id="LOCAL-00001" summary="change source sets to src/test, add runPluginVerifier">
+      <created>1681759073865</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681759073865</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +218,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <MESSAGE value="change source sets to src/test, add runPluginVerifier" />
+    <option name="LAST_COMMIT_MESSAGE" value="change source sets to src/test, add runPluginVerifier" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
