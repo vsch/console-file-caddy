@@ -1,1 +1,0 @@
-rootProject.name = "console-file-caddy"

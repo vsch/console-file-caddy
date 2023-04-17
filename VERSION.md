@@ -5,6 +5,7 @@
 ### Version History
 - [Console File Caddy](#console-file-caddy)
   - [Next 1.2.0 - Future Enhancement Release](#next-120---future-enhancement-release)
+  - [1.1.8 - Bug Fix Release](#118---bug-fix-release)
   - [1.1.6 - Dev Build](#116---dev-build)
   - [1.1.4 - Dev Build](#114---dev-build)
   - [1.1.2 - Dev Build](#112---dev-build)
@@ -16,6 +17,10 @@
 * [ ] Fix: remove test for file existence for `file://` prefixed text
 * [ ] Add: Handle fqn with relative path suffix to allow resource refs using query suffix to fqn
       class name. Something like `fqn://...?resourcePath#LineInfo`.
+
+### 1.1.8 - Bug Fix Release
+
+* Fix: migrate to gradle build
 
 ### 1.1.6 - Dev Build
 

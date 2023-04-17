@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Test All" type="JUnit" factoryName="JUnit">
+    <module name="consoleFileCaddy.test" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" value="jbr-11" />
+    <option name="PACKAGE_NAME" value="com.vladsch.plugins.consolefilecaddy" />
+    <option name="MAIN_CLASS_NAME" value="com.vladsch.plugins.consolefilecaddy.SampleTestSuite" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

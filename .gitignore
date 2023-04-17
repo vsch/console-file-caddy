@@ -1,8 +1,8 @@
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!src/test/java/main/**/build/
-!src/test/java/test/**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -13,8 +13,8 @@ build/
 *.iml
 *.ipr
 out/
-!src/test/java/main/**/out/
-!src/test/java/test/**/out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
 ### Eclipse ###
 .apt_generated
@@ -25,8 +25,8 @@ out/
 .springBeans
 .sts4-cache
 bin/
-!src/test/java/main/**/bin/
-!src/test/java/test/**/bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
 ### NetBeans ###
 /nbproject/private/
@@ -40,3 +40,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+/consoleFileCaddy.jar

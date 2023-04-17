@@ -1,8 +1,8 @@
 <component name="MarkdownNavigator.ProfileManager">
   <settings>
     <scope-profiles>
-      <element scope="Plugin Description" profile="Plugin Description" />
       <element scope="Version" profile="Version" />
+      <element scope="Plugin Description" profile="Plugin Description" />
     </scope-profiles>
   </settings>
 </component>

@@ -1,11 +1,20 @@
+@file:Suppress("PublicApiImplicitType")
+
+fun properties(key: String) = providers.gradleProperty(key)
+fun environment(key: String) = providers.environmentVariable(key)
+
+val pluginVersion = "1.1.8"
+val pluginSinceBuild = "203"
+val pluginUntilBuild = ""
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.7.20"
     id("org.jetbrains.intellij") version "1.13.1"
 }
 
-group = "com.vladsch.plugins.consoleFileCaddy"
-version = "1.1.6"
+group = "com.vladsch.plugins"
+version = pluginVersion
 
 repositories {
     mavenCentral()
@@ -17,11 +26,33 @@ intellij {
     version.set("2020.3.4")
     type.set("IC") // Target IDE Platform
 
-//    plugins.set(listOf("com.intellij.modules.lang"))
+    plugins.set(listOf(/* Plugin Dependencies */))
 }
 
 dependencies {
+    annotationProcessor("junit:junit:4.13.1")
     testImplementation("junit:junit:4.13.1")
+}
+
+sourceSets {
+    main { 
+        java {
+            srcDirs("src")
+            resources.srcDirs("src/resources")
+        }
+        kotlin {
+            srcDirs("src")
+        }
+    }
+    test { 
+        java {
+            srcDirs("test")
+            resources.srcDirs("test/resources")
+        }
+        kotlin {
+            srcDirs("test")
+        }
+    }
 }
 
 tasks {
@@ -34,10 +65,14 @@ tasks {
         kotlinOptions.jvmTarget = "11"
     }
 
-    
     patchPluginXml {
-        sinceBuild.set("203.*")
-        untilBuild.set("")
+        sinceBuild.set(pluginSinceBuild)
+        untilBuild.set(pluginUntilBuild)
+        version.set(pluginVersion)
+    }
+    
+    runPluginVerifier {
+        
     }
 
     signPlugin {
@@ -49,6 +84,4 @@ tasks {
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
     }
-    
-    
 }

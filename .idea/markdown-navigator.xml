@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="MarkdownProjectSettings">
-    <PreviewSettings splitEditorLayout="FIRST" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" synchronizePreviewPosition="true" highlightPreviewType="LINE" highlightFadeOut="5" highlightOnTyping="false" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="true" showSelectionInPreview="true" lastLayoutSetsDefault="false">
+    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" synchronizePreviewPosition="true" highlightPreviewType="LINE" highlightFadeOut="5" highlightOnTyping="false" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="true" showSelectionInPreview="true" lastLayoutSetsDefault="false">
       <PanelProvider>
         <provider providerId="com.vladsch.md.nav.editor.jbcef.html.panel" providerName="Java Chromium Embedded" />
       </PanelProvider>
@@ -35,6 +35,7 @@
         <option name="COMMONMARK_LISTS" value="true" />
         <option name="EMOJI_SHORTCUTS" value="true" />
         <option name="ENUMERATED_REFERENCES_EXT" value="true" />
+        <option name="GFM_TABLE_RENDERING" value="true" />
         <option name="GITHUB_WIKI_LINKS" value="true" />
         <option name="HEADER_ID_NO_DUPED_DASHES" value="true" />
         <option name="JEKYLL_FRONT_MATTER" value="true" />
@@ -42,7 +43,7 @@
         <option name="SIM_TOC_BLANK_LINE_SPACER" value="true" />
       </ParserOptions>
     </ParserSettings>
-    <HtmlSettings headerTopEnabled="false" headerBottomEnabled="false" bodyTopEnabled="false" bodyBottomEnabled="false" addPageHeader="true" addAnchorLinks="true" anchorLinksWrapText="false" imageUriSerials="true" addDocTypeHtml="true" noParaTags="false" defaultUrlTitle="false" migratedPlantUml="true" migratedAnchorLinks="true" plantUmlConversion="0">
+    <HtmlSettings headerTopEnabled="false" headerBottomEnabled="false" bodyTopEnabled="false" bodyBottomEnabled="false" addPageHeader="true" addAnchorLinks="true" anchorLinksWrapText="false" imageUriSerials="false" addDocTypeHtml="true" noParaTags="false" defaultUrlTitle="false" migratedPlantUml="true" migratedAnchorLinks="true" plantUmlConversion="0">
       <GeneratorProvider>
         <provider providerId="com.vladsch.md.nav.editor.javafx.html.generator" providerName="JavaFx/Chromium HTML Generator" />
       </GeneratorProvider>
@@ -55,8 +56,8 @@
         <option name="ditaa" value="NONE" />
         <option name="erd" value="NONE" />
         <option name="graphviz" value="NONE" />
-        <option name="latex" value="EMBEDDED_PNG" />
-        <option name="math" value="EMBEDDED_PNG" />
+        <option name="latex" value="KATEX" />
+        <option name="math" value="KATEX" />
         <option name="mermaid" value="NONE" />
         <option name="nomnoml" value="NONE" />
         <option name="plantuml" value="NONE" />

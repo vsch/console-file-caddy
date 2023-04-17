@@ -1,6 +1,6 @@
 /*
- * Copyright 2000-2015 JetBrains s.r.o.
- * Copyright 2019 Vladimir Schneider, vladimir.schneider@gmail.com
+ * Copyright 2000-2019 JetBrains s.r.o.
+ * Copyright 2019-2023 Vladimir Schneider, vladimir.schneider@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,15 +309,13 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
     }
 
     public static class UrlFilterProvider implements ConsoleFilterProviderEx {
-        @NotNull
         @Override
-        public Filter[] getDefaultFilters(@NotNull Project project, @NotNull GlobalSearchScope scope) {
+        public Filter @NotNull [] getDefaultFilters(@NotNull Project project, @NotNull GlobalSearchScope scope) {
             return new Filter[] { new ConsoleFileCaddyFilter(project, scope) };
         }
 
-        @NotNull
         @Override
-        public Filter[] getDefaultFilters(@NotNull Project project) {
+        public Filter @NotNull [] getDefaultFilters(@NotNull Project project) {
             return getDefaultFilters(project, GlobalSearchScope.allScope(project));
         }
     }
@@ -426,7 +424,7 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
         }
 
         @Override
-        public void navigate(@NotNull Project project) {
+        public void navigate(@Nullable Project project) {
             // open file diff
             OpenFileDescriptor descriptor1 = getDescriptor();
             if (descriptor1 == null) return;
@@ -435,6 +433,8 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
 
             if (descriptor1.getFile().isDirectory() == descriptor2.getFile().isDirectory()) {
                 if (descriptor1.getFile().isDirectory()) {
+                    if (project == null) return;
+                    
                     final PsiManager psiManager = PsiManager.getInstance(project);
                     final @Nullable PsiDirectory psiDirectory1 = psiManager.findDirectory(descriptor1.getFile());
                     final @Nullable PsiDirectory psiDirectory2 = psiManager.findDirectory(descriptor1.getFile());
@@ -459,6 +459,8 @@ public class ConsoleFileCaddyFilter implements Filter, DumbAware {
 
                     if (!diffShown) {
                         // just open files in editor
+                        if (project == null) return;
+
                         Editor textEditor1 = FileEditorManager.getInstance(project).openTextEditor(descriptor1, false);
                         Editor textEditor2 = FileEditorManager.getInstance(project).openTextEditor(descriptor2, false);
                     }
