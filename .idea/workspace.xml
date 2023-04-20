@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99c9eef4-606d-4220-96c1-1c3c383196de" name="Changes" comment="remove jetbrains marketplace script, trying link version">
-      <change afterPath="$PROJECT_DIR$/assets/images/ScreenShot_NavigatedLink@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/ScreenShot_TestResults@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/plugin-developers-toolbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/plugin-developers-toolbox.xml" afterDir="false" />
+    <list default="true" id="99c9eef4-606d-4220-96c1-1c3c383196de" name="Changes" comment="before change to groovy file names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +39,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="consoleFileCaddy" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="consoleFileCaddy" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="intellij" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -111,7 +110,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.console-file-caddy">
+  <component name="RunManager" selected="Gradle.Run Plugin">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -123,6 +122,28 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="console-file-caddy [buildPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildPlugin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
     </configuration>
     <configuration name="console-file-caddy [runPluginVerifier]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -199,6 +220,7 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.Run Plugin" />
+      <item itemvalue="Gradle.console-file-caddy [buildPlugin]" />
       <item itemvalue="Gradle.console-file-caddy [runPluginVerifier]" />
       <item itemvalue="Gradle.console-file-caddy" />
       <item itemvalue="JUnit.Test All" />
@@ -206,6 +228,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.console-file-caddy [buildPlugin]" />
         <item itemvalue="Gradle.console-file-caddy" />
         <item itemvalue="JUnit.SampleCustomizedTest" />
         <item itemvalue="Gradle.console-file-caddy [runPluginVerifier]" />
@@ -242,7 +265,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681759892262</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="before change to groovy from kotlin gradle build">
+      <created>1681983654843</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681983654843</updated>
+    </task>
+    <task id="LOCAL-00005" summary="before change to groovy file names">
+      <created>1681983834364</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681983834364</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,11 +294,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <MESSAGE value="change source sets to src/test, add runPluginVerifier" />
     <MESSAGE value="remove jetbrains marketplace iframe, trying script version" />
     <MESSAGE value="remove jetbrains marketplace script, trying link version" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove jetbrains marketplace script, trying link version" />
+    <MESSAGE value="before change to groovy from kotlin gradle build" />
+    <MESSAGE value="before change to groovy file names" />
+    <option name="LAST_COMMIT_MESSAGE" value="before change to groovy file names" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
