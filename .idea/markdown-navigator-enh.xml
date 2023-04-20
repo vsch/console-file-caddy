@@ -17,58 +17,17 @@
     <otherFiles />
   </component>
   <component name="MarkdownNavigatorHistory">
-    <PasteImageHistory filename="Kotlin_KeepCommentsAtFirstColumn" directory="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/images" onPasteImageTargetRef="3" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteReferenceElement="0" cornerRadius="10" borderColor="-4342339" transparentColor="-14869219" borderWidth="1" trimTop="0" trimBottom="0" trimLeft="0" trimRight="0" transparent="false" roundCorners="true" showPreview="true" bordered="true" scaled="true" cropped="true" hideInapplicableOperations="true" preserveLinkFormat="true" scale="40" scalingInterpolation="1" transparentTolerance="20" saveAsDefaultOnOK="true" linkFormat="2" addHighlights="false" showHighlightCoordinates="true" showHighlights="true" mouseSelectionAddsHighlight="true" outerFilled="true" outerFillColor="-16777216" outerFillTransparent="true" outerFillAlpha="30">
+    <PasteImageHistory checkeredTransparentBackground="false" filename="ScreenShot_TestResults@2x" directory="$PROJECT_DIR$/assets/images" onPasteImageTargetRef="3" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteReferenceElement="0" cornerRadius="10" borderColor="-4342339" transparentColor="-9" borderWidth="1" trimTop="2" trimBottom="2" trimLeft="2" trimRight="169" transparent="false" roundCorners="true" showPreview="true" bordered="true" scaled="false" cropped="true" hideInapplicableOperations="true" preserveLinkFormat="true" scale="40" scalingInterpolation="1" transparentTolerance="20" saveAsDefaultOnOK="true" linkFormat="0" addHighlights="false" showHighlightCoordinates="true" showHighlights="false" mouseSelectionAddsHighlight="true" outerFilled="true" outerFillColor="-16777216" outerFillTransparent="true" outerFillAlpha="30">
       <highlightList>
-        <ImageHighlight top="155" left="258" right="500" bottom="173" roundCorners="true" cornerRadius="10" bordered="true" borderColor="-2752436" borderWidth="1" innerFilled="false" innerFillColor="-256" innerFillTransparent="true" innerFillAlpha="30" shape="1" />
+        <ImageHighlight top="79" left="7" right="463" bottom="111" roundCorners="true" cornerRadius="10" bordered="true" borderColor="-2752436" borderWidth="2" innerFilled="false" innerFillColor="-256" innerFillTransparent="true" innerFillAlpha="30" shape="1" />
       </highlightList>
       <directories>
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/layout" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/emojis2" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/svg" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/Faq" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/com/vladsch/idea/multimarkdown" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/emojis" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/png" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/codestyle" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/structure" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/forums/plugin-dev" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/Issues" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/intention_actions" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/idea-multimarkdown2.wiki/img" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/test/src/com/vladsch/idea/multimarkdown" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/JavaFx-WebView-Debugger/images" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/WebViewDebugSample/target/classes" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/menu" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/support" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/WebViewDebugSample/public" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/emojis" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/misc" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/JavaFx-WebView-Debugger/assets" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/noload" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/Faq/Structure" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/editor_actions" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/images" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/jira" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/META-INF" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/completions" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/WebViewDebugSample/assets/images" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/youtrack" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/intentionDescriptions/CopyPlantUmlImageIntention" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/WebViewDebugSample/src/main/resources" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/application" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/adm" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/images/faq/refactoring" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/Faq/Menu" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/resources/icons/emojis" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/plugin_install/idea-multimarkdown/emojis" />
-        <option name="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/support" />
+        <option name="$PROJECT_DIR$/assets/images" />
+        <option name="$PROJECT_DIR$/src/resources/META-INF" />
       </directories>
       <filenames />
     </PasteImageHistory>
-    <CopyImageHistory filename="Screenshot_StructureViewMarkdown" directory="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/Issues" onPasteImageTargetRef="2" onPasteLinkText="0" onPasteImageElement="1" onPasteLinkElement="1" onPasteReferenceElement="1" cornerRadius="8" borderColor="-4934476" transparentColor="-1250068" borderWidth="1" trimTop="0" trimBottom="0" trimLeft="0" trimRight="0" transparent="false" roundCorners="false" showPreview="true" bordered="false" scaled="false" cropped="false" hideInapplicableOperations="true" preserveLinkFormat="true" scale="80" scalingInterpolation="1" transparentTolerance="0" saveAsDefaultOnOK="true" linkFormat="2" addHighlights="false" showHighlightCoordinates="true" showHighlights="false" mouseSelectionAddsHighlight="false" outerFilled="true" outerFillColor="-16777216" outerFillTransparent="true" outerFillAlpha="30">
+    <CopyImageHistory checkeredTransparentBackground="false" filename="Screenshot_StructureViewMarkdown" directory="$PROJECT_DIR$/../idea-multimarkdown2/assets/doc/comms/Issues" onPasteImageTargetRef="2" onPasteLinkText="0" onPasteImageElement="1" onPasteLinkElement="1" onPasteReferenceElement="1" cornerRadius="8" borderColor="-4934476" transparentColor="-1250068" borderWidth="1" trimTop="0" trimBottom="0" trimLeft="0" trimRight="0" transparent="false" roundCorners="false" showPreview="true" bordered="false" scaled="false" cropped="false" hideInapplicableOperations="true" preserveLinkFormat="true" scale="80" scalingInterpolation="1" transparentTolerance="0" saveAsDefaultOnOK="true" linkFormat="2" addHighlights="false" showHighlightCoordinates="true" showHighlights="false" mouseSelectionAddsHighlight="false" outerFilled="true" outerFillColor="-16777216" outerFillTransparent="true" outerFillAlpha="30">
       <highlightList>
         <ImageHighlight top="81" left="479" right="772" bottom="111" roundCorners="true" cornerRadius="20" bordered="true" borderColor="-2752436" borderWidth="2" innerFilled="false" innerFillColor="-1" innerFillTransparent="false" innerFillAlpha="0" shape="1" />
       </highlightList>
@@ -118,9 +77,12 @@
       </directories>
       <filenames />
     </CopyImageHistory>
-    <PasteLinkHistory onPasteImageTargetRef="2" onPasteTargetRef="2" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteWikiElement="1" onPasteReferenceElement="2" hideInapplicableOperations="false" preserveLinkFormat="true" useHeadingForLinkText="false" saveAsDefaultOnOK="true" linkFormat="2" />
+    <PasteLinkHistory onPasteImageTargetRef="2" onPasteTargetRef="2" onPasteLinkText="0" onPasteImageElement="2" onPasteLinkElement="2" onPasteWikiElement="1" onPasteReferenceElement="2" hideInapplicableOperations="false" preserveLinkFormat="true" useHeadingForLinkText="false" linkFormat="2" saveAsDefaultOnOK="true" />
     <TableToJsonHistory>
       <entries />
     </TableToJsonHistory>
+    <TableSortHistory>
+      <entries />
+    </TableSortHistory>
   </component>
 </project>

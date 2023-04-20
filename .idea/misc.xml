@@ -18,6 +18,9 @@
   <component name="ScalaSbtSettings">
     <option name="customVMPath" />
   </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>

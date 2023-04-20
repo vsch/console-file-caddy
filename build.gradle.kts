@@ -9,8 +9,8 @@ val pluginUntilBuild = ""
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.7.20"
-    id("org.jetbrains.intellij") version "1.13.1"
+    id("org.jetbrains.kotlin.jvm") version "1.8.20"
+    id("org.jetbrains.intellij") version "1.13.3"
 }
 
 group = "com.vladsch.plugins"
@@ -30,8 +30,8 @@ intellij {
 }
 
 dependencies {
-    annotationProcessor("junit:junit:4.13.1")
-    testImplementation("junit:junit:4.13.1")
+    annotationProcessor("junit:junit:4.13.2")
+    testImplementation("junit:junit:4.13.2")
 }
 
 sourceSets {
