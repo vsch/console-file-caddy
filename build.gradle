@@ -4,6 +4,7 @@ plugins {
     id "org.jetbrains.intellij" version "1.13.3"
 }
 
+def javaVersion = "11"
 def pluginVersion = "1.1.8"
 def pluginSinceBuild = "203"
 def pluginUntilBuild = ""
@@ -52,12 +53,12 @@ sourceSets {
 
 // Set the JVM compatibility versions
 compileJava {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = javaVersion
 }
 
 tasks {

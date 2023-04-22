@@ -43,13 +43,13 @@ to the source of the failed test but not the location of the parameterized data 
 test.
 
 Using code similar to
-[SampleCustomTest.java](src/test/com/vladsch/plugins/consolefilecaddy/SampleCustomizedTest.java)
-in parameterized tests to generate a link in the message for failed tests, takes the pain out by
+[SampleCustomTest.java](test/com/vladsch/plugins/consolefilecaddy/SampleCustomizedTest.java) in
+parameterized tests to generate a link in the message for failed tests, takes the pain out by
 linking to the data location, without a long search or guesswork.
 
 A simpler one line version, without the hassles of computing column information will navigate to
 the start of line for the parameterized data definition
-[SampleTest.java](src/test/com/vladsch/plugins/consolefilecaddy/SampleTest.java).
+[SampleTest.java](test/com/vladsch/plugins/consolefilecaddy/SampleTest.java).
 
 Running these tests for this project in IntelliJ will result in a failed test output with a
 navigable link to the errant test parameter data row:
